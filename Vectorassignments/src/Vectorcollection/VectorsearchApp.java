@@ -1,37 +1,36 @@
-package Capacity;
+package Vectorcollection;
 import java.util.*;
-public class VectormaxIteratorApp 
+public class VectorsearchApp 
 {
     public static void main(String[] args) 
     {
         Vector v = new Vector();
         Scanner xyz = new Scanner(System.in);
-        int limit;
+        int limit,i,val;
         System.out.println("Enter the Number of Elements to be added inside Vector:");
         limit = xyz.nextInt();
-        System.out.println("Enter the Elements inside Vector:"); 
-        int i,val;
+        System.out.println("Enter the Data inside Vector:");
         for(i=0;i<limit;i++)
         {
             val = xyz.nextInt();
             v.add(val);
-        } 
+        }  
         System.out.println("Display Vector Elements:");
         for(Object obj:v)
         {
             System.out.println(obj);
         }
-        int max;
-        max = (int)v.get(0);
-        Iterator iter = v.iterator();
-        while(iter.hasNext())
+        int skey;
+        System.out.println("Enter the Element which you wants to search:");
+        skey = xyz.nextInt();
+        boolean b = v.contains(skey);
+        if(b)
         {
-            Object obj = iter.next();
-            if((int)obj>max)
-            {
-                max = (int)obj;
-            }
+            System.out.println(skey + " is present in Vector");
         }
-        System.out.println("Maximum ELement in Vector is:" +max);
+        else
+        {
+            System.out.println(skey + " is not present inside Vector");
+        }
     }
 }
