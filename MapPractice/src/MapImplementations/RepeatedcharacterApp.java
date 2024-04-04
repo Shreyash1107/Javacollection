@@ -22,18 +22,19 @@ public class RepeatedcharacterApp
                     map.put(c, 1);
                 }
             }
+            int flag=-1;
             System.out.print("Display Character with Occurrence are:");
             for(Map.Entry<Character,Integer> m:set)
             {
-               if(m.getValue()>1)
-               {
-                    System.out.print(m.getKey());
-               }
-               else
-               {
-                    System.out.println("No Charater Repeated");
-                    break;
-               }
+                if(m.getValue()>1)
+                {
+                    System.out.print(m.getKey() + " ");
+                    flag = 1;
+                }
+            }
+            if(flag!=1)
+            {
+                System.out.print("No Characters Repeated in the Given String:");
             }
     }
 }
